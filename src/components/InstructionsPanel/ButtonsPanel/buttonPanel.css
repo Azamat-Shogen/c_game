@@ -1,6 +1,8 @@
 .buttons-panel {
     background-color: #292727;
     border-radius: 15px;
+    margin: auto;
+
 }
 .btn {
     max-width: 150px;

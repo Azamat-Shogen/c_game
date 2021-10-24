@@ -79,10 +79,10 @@ const ButtonPanel = (props) => {
 
 
     return (
-        <div className="col-lg-3 col-sm-3 buttons-panel">
+        <div className="col-lg-3 col-md-3 buttons-panel">
 
             <div className="row  bt-row">
-                <button className="btn btn-primary mt-2"
+                <button className="btn btn-primary btn-sm mt-2"
                         onClick={handleStart}
                         disabled={!props.hidden || props.started}
                 >Start</button>

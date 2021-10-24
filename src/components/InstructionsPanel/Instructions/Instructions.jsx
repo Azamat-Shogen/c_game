@@ -7,7 +7,7 @@ import ConfirmPanel from "./ConfirmPanel/ConfirmPanel";
 const Instructions = () => {
 
     return (
-        <div className="col instructions-body">
+        <div className="col-lg-8 col-md-8 instructions-body">
             <div className="row">
                 <TypingPanel />
                 <ConfirmPanel />
