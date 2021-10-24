@@ -1,0 +1,13 @@
+.buttons-panel {
+    background-color: #292727;
+    border-radius: 15px;
+}
+.btn {
+    max-width: 150px;
+    border: 2px solid yellow;
+    text-align: center;
+}
+.bt-row {
+    display: flex;
+    justify-content: center;
+}

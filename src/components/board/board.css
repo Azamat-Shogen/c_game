@@ -1,0 +1,9 @@
+.board{
+    background-color: #2e992e;
+    width: 90%;
+    height: 100%;
+}
+
+.container-fluid{
+    padding-left: 0;
+}

@@ -1,0 +1,70 @@
+.header {
+    /*background-color: #80C4EE;*/
+    background-color: #178cd9;
+    margin-top: 20px;
+    height: 70px;
+    min-width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #3c403c;
+}
+
+.header-img {
+    max-height: 70px;
+    padding: 3px;
+    float: right;
+    margin: 2px;
+}
+
+.joker-img {
+    height: 60px;
+    width: 60px;
+    padding: 3px;
+    border-radius: 50px;
+    border: 2px solid darkgreen;
+    float: left;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin: auto 0;
+}
+
+h6 {
+   font-family: cursive;
+}
+
+.author {
+    color: #fcfdfd;
+}
+
+.title-wrapper {
+    display: flex;
+    font-family: font-sans, serif;
+    font-weight: bold;
+    align-items: center;
+}
+.title-name-wrapper {
+    margin-left: 10px;
+}
+.line {
+    margin: 0;
+    border: 3px solid blue;
+    width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

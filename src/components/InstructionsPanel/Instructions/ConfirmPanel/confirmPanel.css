@@ -1,0 +1,14 @@
+.confirm{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.confirm-hidden{
+    visibility: hidden;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 30px auto;
+}
