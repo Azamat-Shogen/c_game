@@ -6,7 +6,11 @@ import {
     SET_ROUND,
     ROW_SELECT,
     STARTED_DISABLED,
-    RESET_ROUND, REVEAL_CARD, SET_TEXT, RESET_BACKGROUND, RESET_CARDS
+    RESET_ROUND,
+    REVEAL_CARD,
+    SET_TEXT,
+    RESET_BACKGROUND,
+    RESET_CARDS
 } from "../reducers/actionTypes";
 import { mixCardsUtils } from "../utils";
 
@@ -25,10 +29,10 @@ export const selectRow = (rowNumber) => {
 }
 
 export const mixCards = (arr) => {
-    const mixed = mixCardsUtils(arr)
+    const mixedArray = mixCardsUtils(arr)
     return {
         type: MIX_CARDS,
-        payload: mixed
+        payload: mixedArray
     }
 }
 
