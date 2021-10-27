@@ -15,7 +15,7 @@ const TypingPanel = ({text}) => {
                         blink: true,
                         element: "|",
                         hideWhenDone: true,
-                        hideWhenDoneDelay: 1000,
+                        hideWhenDoneDelay: 10,
                     }}
                 // onTypingDone={()=> setCurrentText("")}
             >
