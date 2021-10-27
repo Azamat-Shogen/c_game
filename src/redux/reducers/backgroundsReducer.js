@@ -30,7 +30,6 @@ const backgroundReducer = (state = initialState, action) => {
         case REVEAL_CARD:
             return {...state, cards: action.payload}
         case RESET_BACKGROUND:
-
             return {...state, cards: initDeck()}
         default:
             return state

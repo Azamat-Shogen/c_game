@@ -1,30 +1,22 @@
 import React from 'react';
 import {connect} from "react-redux";
 import "./buttonPanel.css"
-import {
-    startGame,
-    toggleHidden,
-    selectRow,
-    setRowSelected,
-    mixCards,
-    setRound,
-    disableStarted,
-    resetRound, revealCard, setText, resetBackground, resetCards
-} from "../../../redux/actions/actions";
+import {startGame, toggleHidden, selectRow,
+        setRowSelected, mixCards, setRound,
+        disableStarted, resetRound, revealCard,
+        setText, resetBackground, resetCards
+        } from "../../../redux/actions/actions";
 import {instructions} from "../../../redux/utils";
-
 
 
 
 const ButtonPanel = (props) => {
 
-
     const resetRound = () => {
         setTimeout(() => props.setRound(), 3000)
     }
 
-    // const cardToTest = (idx) => props.cards[idx]
-
+    //TODO: Handle - Start click
     const handleStart = () => {
         props.resetBackground();
         props.resetCards();
@@ -33,12 +25,14 @@ const ButtonPanel = (props) => {
         props.setText(instructions[0])
     }
 
+    //TODO: handle row button clicks
     const handleRow = (num) => {
         props.selectRow(num)
         props.setRowSelected(true)
         props.setText(instructions[num])
     }
 
+    // TODO: call mix card actions
     const handleMixCards = () => {
         props.mix(props.cards)
         props.setRound()
@@ -63,6 +57,7 @@ const ButtonPanel = (props) => {
 
     }
 
+    //TODO: Reveal card button logic
     const revealCardHandle = (idx) => {
         const card = props.cards[idx]
         const newIdx = Math.floor(Math.random() * 36);
@@ -87,24 +82,28 @@ const ButtonPanel = (props) => {
                         disabled={!props.hidden || props.started}
                 >Start</button>
             </div>
+
             <div className="row bt-row">
                 <button className="btn btn-info btn-sm mt-2"
                         onClick={() => handleRow(1)}
                         disabled={props.hidden}
                 >Row 1</button>
             </div>
+
             <div className="row  bt-row">
                 <button className="btn btn-info btn-sm mt-2"
                         onClick={() => handleRow(2)}
                         disabled={props.hidden}
                 >Row 2</button>
             </div>
+
             <div className="row  bt-row">
                 <button className="btn btn-info btn-sm mt-2"
                         onClick={() => handleRow(3)}
                         disabled={props.hidden}
                 >Row 3</button>
             </div>
+
             <div className="row  bt-row">
                 {props.round >= 3 ?
                     <button className="btn btn-info btn-sm mt-2 mb-2"

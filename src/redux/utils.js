@@ -2,22 +2,19 @@ export const selectRowUtils = (arr, num) => {
 
     if(num === 1){
             arr.map( (el, i) => {
-            if(i < 12) { el.selected = true }
-            else { el.selected = false }
+            el.selected = i < 12;
             return el
         })
     }
     else if(num === 2){
         arr.map( (el, i) => {
-            if(i >= 12 && i < 24) { el.selected = true }
-            else { el.selected = false }
+            el.selected = i >= 12 && i < 24;
             return el
         })
     }
     else {
         arr.map( (el, i) => {
-            if(i >= 24 && i < 36) { el.selected = true }
-            else { el.selected = false }
+            el.selected = i >= 24 && i < 36;
             return el
         })
     }

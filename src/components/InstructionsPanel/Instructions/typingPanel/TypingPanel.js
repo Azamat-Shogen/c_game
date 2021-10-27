@@ -28,8 +28,6 @@ const TypingPanel = ({text}) => {
 
 const mapStateToProps = state => ({
     text: state.instructions.text,
-    hidden: state.cards.hidden
-
 })
 
 export default connect(mapStateToProps, null)(TypingPanel);
