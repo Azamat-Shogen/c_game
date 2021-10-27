@@ -10,32 +10,16 @@ const Board = ({backgrounds, cards, hidden}) => {
 
     //TODO: whenever hidden updates - animate
     useEffect( () => {
-        if (!hidden){
-            let index = 0;
-            const interval = setInterval(() => {
-                let arr = [...deck]
-                deck[index] = cards[index]
-                setDeck(arr)
-                index++;
-                if(index === 37) clearInterval(interval)
-            }, 50)
+        let index = 0;
+        const interval = setInterval(() => {
+           if (!hidden) setDeck([...cards.slice(0, index), ...deck.slice(index)]);
+           else setDeck([...backgrounds.slice(0, index), ...deck.slice(index)]);
+           index++
 
-        }
-        else {
-            let index = 0;
-            const interval = setInterval(() => {
-                let arr = [...deck]
-                deck[index] = backgrounds[index]
-                setDeck(arr)
-                index++;
-                if(index === 37) clearInterval(interval)
-            }, 50)
-        }
+           if(++index > 36) clearInterval(interval)
+        }, 60)
 
-       return () => {
-            console.log("")
-       }
-
+       return () => { console.log() }
     }, [hidden, backgrounds])
 
 
