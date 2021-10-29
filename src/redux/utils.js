@@ -21,6 +21,7 @@ export const selectRowUtils = (arr, num) => {
     return arr
 }
 
+
 function getSelectedValue(arr){
     return arr.every(el => el.selected === true)
 }
@@ -80,7 +81,57 @@ export const instructions = [
     "Thanks for playing adventurer! Click Start if you want to play again"
 ]
 
+class Card{
+    constructor(source) {
+        this.source = source
+        this.selected = false
+    }
+}
 
+//TODO: set up the backgrounds class for the class
+export class Background{
+    constructor(imageSource) {
+        this.imageSource = imageSource;
+        this._backgrounds = [];
+        this.initBackground()
+    }
+
+    initBackground(){
+        for(let i = 0; i <= 36; i++){
+            const card = new Card(this.imageSource);
+            this._backgrounds.push(card)
+        }
+    }
+
+    get backgrounds(){
+        return this._backgrounds
+    }
+}
+
+//TODO: DECK OF CARDS CLASS SET UP
+export class Deck{
+    constructor(imageArray) {
+        this.imageArray = imageArray;
+        this._deck = [];
+        this.initDeck()
+    }
+
+    initDeck(){
+        for(let i = 1; i <= 36; i++){
+            const card = new Card(this.imageArray[`card${i}`]);
+            this._deck.push(card)
+        }
+        //todo: shuffle deck initially
+        for(let i = this._deck.length-1; i > 0; i--){
+            const rand = Math.floor(Math.random() * (i + 1));
+            [this._deck[i], this._deck[rand]] = [this._deck[rand], this._deck[i]]
+        }
+    }
+
+    get deck(){
+        return this._deck
+    }
+}
 
 
 

@@ -1,36 +1,19 @@
 import background from "../../components/board/cards2/blue_back.png";
-import { v4 as uuidv4 } from 'uuid';
 import { REVEAL_CARD, RESET_BACKGROUND } from "./actionTypes";
+import { Background } from "../utils";
 
-class Card{
-    constructor(source) {
-        this.source = source
-        this.selected = false
-        this.id = uuidv4()
-    }
-}
-
-
-const initDeck = () => {
-    const deckArr = []
-    for(let i = 1; i <= 36; i++){
-        const card = new Card(background)
-        deckArr.push(card)
-    }
-    return deckArr
-}
 
 const initialState = {
-    cards: initDeck()
+    cards: new Background(background).backgrounds
 }
-
 
 const backgroundReducer = (state = initialState, action) => {
     switch (action.type){
         case REVEAL_CARD:
             return {...state, cards: action.payload}
         case RESET_BACKGROUND:
-            return {...state, cards: initDeck()}
+
+            return {...state, cards: new Background(background).backgrounds}
         default:
             return state
     }
