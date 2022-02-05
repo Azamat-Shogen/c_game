@@ -1,3 +1,4 @@
 # A card trick game
-#### tools used: React, JavaScript, Redux
+#### Tools used: React, JavaScript, Redux
+#hr
 ### Play it 🚀: https://c-game-az.netlify.app/
