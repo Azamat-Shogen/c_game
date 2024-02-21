@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from "react-redux";
 import "./buttonPanel.css"
 import {startGame, toggleHidden, selectRow,
@@ -58,8 +57,8 @@ const ButtonPanel = (props) => {
     }
 
     //TODO: Reveal card button logic
-    const revealCardHandle = (idx) => {
-        const card = props.cards[idx]
+    const revealCardHandle = () => {
+        const card = props.cards[props.winningIndex]
         const newIdx = Math.floor(Math.random() * 36);
         const newBackground = props.backgrounds.map((el, i) => {
             if (i === newIdx){ return card }
@@ -107,7 +106,7 @@ const ButtonPanel = (props) => {
             <div className="row  bt-row">
                 {props.round >= 3 ?
                     <button className="btn btn-info btn-sm mt-2 mb-2"
-                            onClick={() => revealCardHandle(29)}
+                            onClick={revealCardHandle}
                             disabled={props.round <= 3 || props.round > 4 }
                     >Reveal Card</button>
                    :
@@ -147,4 +146,5 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps) (ButtonPanel)
+
 

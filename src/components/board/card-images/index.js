@@ -10,10 +10,15 @@
 //
 // }
 
-const CARD_IMAGES = {}
-for(let i = 1; i <= 36; i++){
-    CARD_IMAGES[`card${i}`] = require(`./${i}.png`).default
-}
 
-export default CARD_IMAGES
+const CARD_IMAGES = {};
 
+for (let i = 1; i <= 36; i++) {
+    // Use template literals to dynamically specify the image path
+    import(`./${i}.png`).then((image) => {
+      CARD_IMAGES[`card${i}`] = image.default;
+    });
+  }
+
+
+export default CARD_IMAGES;
