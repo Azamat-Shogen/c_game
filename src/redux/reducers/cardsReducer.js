@@ -1,4 +1,4 @@
-import CARD_IMAGES from '../../components/board/cards2'
+import CARD_IMAGES from '../../components/board/card-images'
 import {GAME_STARTED, SELECT_ROW, MIX_CARDS, HIDDEN, RESET_ROUND,
     SET_ROUND, ROW_SELECT, STARTED_DISABLED, RESET_CARDS
 } from "./actionTypes";
@@ -13,6 +13,7 @@ const initialState = {
     startedDisabled: false,
     round: 0
 }
+
 
 const cardsReducer = (state = initialState, action) => {
     switch (action.type){

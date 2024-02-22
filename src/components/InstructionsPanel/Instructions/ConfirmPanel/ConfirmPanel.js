@@ -17,7 +17,7 @@ const ConfirmPanel = (props) => {
     const handleNo = () => {
         props.resetBackground()
 
-        const card = props.cards[6]
+        const card = props.cards[props.winningIndex];
         const back_img = props.backgrounds[0]
         const newIdx = Math.floor(Math.random() * 36);
         const newBackground = props.backgrounds.map((el, i) => {

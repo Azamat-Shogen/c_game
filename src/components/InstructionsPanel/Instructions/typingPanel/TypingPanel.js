@@ -1,27 +1,25 @@
-import React from "react";
-import Typist from "react-typist";
+import { useState, useEffect } from "react";
+import { TypeAnimation } from 'react-type-animation';
 import {connect} from "react-redux";
-import "./typingPanel.css"
 
 
 const TypingPanel = ({text}) => {
+
+    const [key, setKey] = useState(0);
+    useEffect(() => {
+        setKey((prevKey) => prevKey + 1);
+      }, [text]);
+
     return (
-        <div className="col-sm-8">
-            <Typist key={text} className="MyTypist"
-                    avgTypingDelay={50}
-                    stdTypingDelay={25}
-                    cursor={{
-                        show: true,
-                        blink: true,
-                        element: "|",
-                        hideWhenDone: true,
-                        hideWhenDoneDelay: 10,
-                    }}
-                // onTypingDone={()=> setCurrentText("")}
-            >
-                <Typist.Delay ms={100} />
-                {text}
-            </Typist>
+        <div className="col-sm-8" style={{margin: "1rem"}}>
+        <TypeAnimation
+            key={key} // Use key prop to force remount
+            cursor={{ show: true, blink: true, element: "|", hideWhenDone: true }}
+            sequence={[text]} // Use the updated text
+            onAnimationEnd={() => {}} // Optionally handle onAnimationEnd
+        />
+            
+        
         </div>
     )
 }
@@ -31,3 +29,12 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, null)(TypingPanel);
+
+
+{/* <TypeAnimation className="MyTypist"
+            sequence={[text]}
+            speed={50}
+            style={{ fontSize: '1em' }}
+            wrapper="span"
+            omitDeletionAnimation={false}
+          /> */}

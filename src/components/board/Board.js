@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Card from "./card/Card";
 
 
-
 const Board = ({backgrounds, cards, hidden}) => {
     const [deck, setDeck] = useState([])
 

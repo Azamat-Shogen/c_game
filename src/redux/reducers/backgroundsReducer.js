@@ -1,4 +1,4 @@
-import background from "../../components/board/cards2/blue_back.png";
+import background from "../../components/board/card-images/blue_back.png";
 import { REVEAL_CARD, RESET_BACKGROUND } from "./actionTypes";
 import { Background } from "../utils";
 
